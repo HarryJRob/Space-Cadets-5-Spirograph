@@ -25,17 +25,18 @@ public class Main extends Application {
 			
 	        gc.setFill(Color.GREEN);
 	        gc.setStroke(Color.BLUE);
-	        gc.setLineWidth(5);
+	        gc.setLineWidth(3);
 	        
-	        double R = 200;
-	        double r = 42;
-	        double O = 40;
+	        double R = 250;
+	        double r = 50;
+	        double O = 5;
+	        double res = 256;
 	        double max_t = 2 * Math.PI * r / GCD(R, r);
 	        
 	        LinkedList<Double> xListPoints = new LinkedList<Double>();
 	        LinkedList<Double> yListPoints = new LinkedList<Double>();
 	        
-	        for(double t = 0; t < max_t; t += Math.PI/128) {
+	        for(double t = 0; t < max_t; t += Math.PI/res) {
 	        	xListPoints.add((R+r)*Math.cos(t) - (r+O)*Math.cos(((R+r)/r)*t) + (scene.getWidth()/2));
 	        	yListPoints.add((R+r)*Math.sin(t) - (r+O)*Math.sin(((R+r)/r)*t) + (scene.getHeight()/2));
 	        }
